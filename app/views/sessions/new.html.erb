@@ -1,0 +1,15 @@
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
+<div>
+    <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Log in" %>
+    <% end %>
+
+    <p>未登録の方は<%= link_to "こちら", signup_path %>から登録してください</p>
+</div>
