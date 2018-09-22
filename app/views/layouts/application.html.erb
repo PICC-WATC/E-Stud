@@ -9,6 +9,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <% if logged_in? %>
+      <li><%= link_to "Users", '#' %></li>
+      <li>
+        <a href = "#">Account</a>
+        <ul>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        </ul>
+      </li>
+    <% else %>
+      <li><%= link_to "Log in", logout_path %></li>
+    <% end %>
+  </header>
+
   <body>
     <% flash.each do |message_type, message| %>
       <div><%= message %></div>
