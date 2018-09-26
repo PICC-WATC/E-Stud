@@ -9,6 +9,10 @@
         <%= f.password_field :password %>
 
         <%= f.submit "Log in" %>
+        <%= f.label :remember_me do %>
+            <%= f.check_box :remember_me %>
+            <span>Remember me on this computer</span>
+        <% end %>
     <% end %>
 
     <p>未登録の方は<%= link_to "こちら", signup_path %>から登録してください</p>
