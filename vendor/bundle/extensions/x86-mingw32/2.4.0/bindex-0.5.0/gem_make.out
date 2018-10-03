@@ -1,0 +1,16 @@
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+C:/Ruby24/bin/ruby.exe -r ./siteconf20180929-18640-14qh4yi.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+generating cruby-i386-mingw32.def
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20180929-18640-1ynq8cg/bindex
