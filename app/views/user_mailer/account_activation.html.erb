@@ -1,6 +1,6 @@
 <h1>E-Stud</h1>
 
 <p>
-  下のURLをクリックで<%= @user.name %>のアカウント有効化
-  <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+  下のをクリックで<%= @user.name %>のアカウント有効化
+  <%= link_to "Reset password" edit_account_activation_url(@user.activation_token, email: @user.email) %>
 </p>
