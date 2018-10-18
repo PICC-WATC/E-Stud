@@ -2,5 +2,5 @@
 
 <p>
   下のをクリックで<%= @user.name %>のアカウント有効化
-  <%= link_to "Reset password" edit_account_activation_url(@user.activation_token, email: @user.email) %>
 </p>
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
