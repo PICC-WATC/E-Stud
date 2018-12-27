@@ -13,7 +13,7 @@ module SessionsHelper
 
     #渡されたユーザーがログイン済みユーザーであればtrueを返す
     def current_user?(user)
-        user == @current_user
+        user == current_user
     end
 
     #現在ログインしているユーザーを返す　(いる場合)
@@ -31,7 +31,7 @@ module SessionsHelper
 
     #ユーザーがログインしていればtrue,その他ならfalseを返す
     def logged_in?
-        !@current_user.nil?
+        !current_user.nil?
     end
     
     #永続的セッションを破棄する
