@@ -71,13 +71,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'https://mighty-earth-93615.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
-  ActionMailer::base.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :address => 'smtp-sendgrid.net',
     :port    => '587',
     :authentication => :plain,
-    :user_name: => ENV['SENDGRID_USERNAME'],
+    :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'heroku.com'
+    :domain => 'heroku.com',
     :enable_starttls_auto => true
   }
 
