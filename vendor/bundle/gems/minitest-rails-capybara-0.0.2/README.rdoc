@@ -1,0 +1,59 @@
+= minitest-rails-capybara
+
+Capybara integration for MiniTest::Rails.
+
+== Install
+
+    gem install minitest-rails-capybara
+
+This installs the following gems:
+
+    minitest
+    minitest-rails
+    capybara
+
+== Configure
+
+Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> and <tt>:development</tt> groups in Gemfile:
+
+    group :test, :development do
+      gem 'minitest-rails'
+      gem 'minitest-rails-capybara'
+    end
+
+Add the following to your <tt>minitest_helper.rb</tt> file to the <tt>test</tt> directory.
+
+    require "minitest/rails/capybara"
+
+== Usage
+
+Generate a new acceptance test using the default generator:
+
+    rails generate integration_test CanAccessHome
+
+And you can specify use of the MiniTest::Spec DSL by providing the <tt>--spec</tt> option:
+
+    rails generate integration_test CanAccessHome --spec
+
+You can now use Capybara in your acceptance tests!
+
+    require "minitest_helper"
+    
+    class CanAccessHomeTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+      test "the homepage has content" do
+        visit root_path
+        assert page.has_content?("Home#index")
+      end
+    end
+
+== Get Involved
+
+Join the mailing list to get help or offer suggestions.
+
+https://groups.google.com/group/minitest-rails
+
+== License
+
+Copyright © 2012 Mike Moore.
+
+Released under the MIT license. See `LICENSE` for details.
