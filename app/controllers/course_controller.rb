@@ -1,32 +1,33 @@
 class CourseController < ApplicationController
 
   def top
-    $quiz = Quiz.where(q_type: "5choice").where(label: "50quiz1")
+    $q_type = "5choice"
+    $label = "50quiz" + "1"
+    $usr_id = 1
+    $quiz = Quiz.where(q_type: $q_type).where(label: $label)
     $correct = 0
     $nums = 0
-    $flag = false
   end
 
   def update
-    if $flag then
-      check
-    end
     $q = $quiz[$nums]
     @select = Select.new
     if $q then
      $choices = Choice.find($q.choice_id)
      $nums += 1
-     $flag = true
     else
       redirect_to '/result'
     end
   end
 
   def check
-    if $q.answer == eval("$choices.choice_#{params[:num]}") then
-      $correct += 1
-      p "real answer => #{$q.answer}"
-      p "your answer => #{eval("$choices.choice_#{params[:num]}")}"
+    begin
+      if $q.answer == eval("$choices.choice_#{params[:num]}") then
+        $correct += 1
+        p "real answer => #{$q.answer}"
+        p "your answer => #{eval("$choices.choice_#{params[:num]}")}"
+      end 
+    rescue => exception
     end
   end
   

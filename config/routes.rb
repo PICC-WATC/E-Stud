@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   post '/course', to: 'course#update'
   get '/result', to: 'course#last'
 # choose course
-  get '/choose-course', to: 'choose-course#top'
-  post '/choose-course', to: 'choose-course#history'
+  get '/choose_course', to: 'choose_course#top'
+# history
+  post '/history', to: 'history#create'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
