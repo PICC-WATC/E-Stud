@@ -13,6 +13,17 @@ User.create!(name: "Administrator",
              activated: true,
              activated_at: Time.zone.now)
 
+Label.create!(
+                name: "50quiz",
+                q_type: 1
+                max: 1)
+
+QuizType.create!(
+                name: "5choice")
+               
+QuizType.create!(
+                name: "entrybox")
+
 Quiz.create!(
                 q_text: "What is my favorite color?",
                 answer: "blue",
