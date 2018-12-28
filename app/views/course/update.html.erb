@@ -2,15 +2,17 @@
     <%= $q.q_text %>
 </p>
 <ol>
-    <% (1..5).each do |n| %>
-        <% if eval("$choices.choice_#{n}") then %>
-            <li>
-                <%= radio_button_tag('num',n) %>
-                <%= label_tag("num_#{n}",eval("$choices.choice_#{n}")) %>
-            </li>
+    <%= form_tag(controller: "course", action: "update") do %>
+        <% (1..5).each do |n| %>
+            <% if eval("$choices.choice_#{n}") then %>
+                <li>
+                    <%= radio_button_tag('num',n) %>
+                    <%= label_tag("num_#{n}",eval("$choices.choice_#{n}")) %>
+                </li>
+            <% end %>
         <% end %>
+        <%= submit_tag("次へ") %>
     <% end %>
 </ol>
 <p>
 </p>
-<%= button_to("次へ", :method => :post)%>

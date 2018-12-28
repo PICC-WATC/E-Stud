@@ -22,10 +22,15 @@ class CourseController < ApplicationController
   end
 
   def check
-    if $q.answer == eval("$choices.choice_#{params[:select]}") then
-      $correct += 1
-      p "real answer => #{$q.answer}"
-      p 'your answer => #{eval("choices.choice_#{:select}")'
+    
+    begin
+      if $q.answer == eval("$choices.choice_#{params["num"]}") then
+        $correct += 1
+        p "real answer => #{$q.answer}"
+        p 'your answer => #{eval("choices.choice_#{:select}")'
+      end
+    rescue => exception
+      
     end
   end
   
