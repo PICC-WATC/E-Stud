@@ -1,5 +1,5 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/nio4r-2.3.1/ext/nio4r
-C:/Ruby24/bin/ruby.exe -r ./siteconf20181227-15720-1ak1a0h.rb extconf.rb
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-15976-1ujolum.rb extconf.rb
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/nio4r-2.3.1/ext/nio4r
 make "DESTDIR=" clean

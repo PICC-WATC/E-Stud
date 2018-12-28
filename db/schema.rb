@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_135309) do
+ActiveRecord::Schema.define(version: 2018_12_28_054211) do
 
   create_table "choices", force: :cascade do |t|
     t.text "choice_1"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_135309) do
     t.text "choice_5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "select"
+    t.integer "select"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 2018_12_27_135309) do
     t.integer "choice_id"
     t.string "q_type"
     t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "selects", force: :cascade do |t|
+    t.integer "usr_select"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,5 +1,5 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
-C:/Ruby24/bin/ruby.exe -r ./siteconf20181227-15720-fug7wl.rb extconf.rb
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-15976-60ivou.rb extconf.rb
 checking for rb_sym2str()... yes
 creating Makefile
 
@@ -15,4 +15,4 @@ linking shared-object duktape_ext.so
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20181227-15720-14hvk6l
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20181228-15976-4sal5m

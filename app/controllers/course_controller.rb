@@ -12,6 +12,7 @@ class CourseController < ApplicationController
       check
     end
     $q = $quiz[$nums]
+    @select = Select.new
     if $q then
      $choices = Choice.find($q.choice_id)
      $nums += 1
@@ -22,10 +23,10 @@ class CourseController < ApplicationController
   end
 
   def check
-    if $q.answer == eval("$choices.choice_#{params[:select]}") then
+    if $q.answer == eval("$choices.choice_#{params[:num]}") then
       $correct += 1
       p "real answer => #{$q.answer}"
-      p 'your answer => #{eval("choices.choice_#{:select}")'
+      p "your answer => #{eval("$choices.choice_#{params[:num]}")}"
     end
   end
   
