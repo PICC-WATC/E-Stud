@@ -1,0 +1,18 @@
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-15976-60ivou.rb extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" clean
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR="
+generating duktape_ext-i386-mingw32.def
+compiling duktape.c
+compiling duktape_ext.c
+linking shared-object duktape_ext.so
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20181228-15976-4sal5m

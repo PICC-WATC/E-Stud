@@ -1,0 +1,21 @@
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-15976-1f0t7la.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR="
+generating puma_http11-i386-mingw32.def
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20181228-15976-1pvyhl2/puma

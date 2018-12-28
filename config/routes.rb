@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
-
+# course
+  get '/course', to: 'course#top'
+  post '/course', to: 'course#update'
+  get '/result', to: 'course#last'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
