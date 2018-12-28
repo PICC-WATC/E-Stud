@@ -17,7 +17,7 @@
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
           <li>
-            <a href = "#">Account</a>
+          <%= link_to "Account", choose_course_path %>
             <ul>
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>

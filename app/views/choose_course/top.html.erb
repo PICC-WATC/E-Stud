@@ -1,2 +1,12 @@
-<h1>ChooseCourse#top</h1>
-<p>Find me in app/views/choose_course/top.html.erb</p>
+<p>
+    <%= form_tag(course_path, method: :get) do  %>
+        <%= select_tag  :label, options_for_select(Label.all.map{|l| l.name}), {prompt: '問題の分野を選択'}
+        #, {data: {remote: true }}
+         %>
+
+        <div id = "type-select">
+        </div>
+
+        <%= submit_tag("問題へ") %>
+    <% end %>
+</p>

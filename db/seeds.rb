@@ -15,7 +15,7 @@ User.create!(name: "Administrator",
 
 Label.create!(
                 name: "50quiz",
-                q_type: 1
+                q_types: 1,
                 max: 1)
 
 QuizType.create!(
