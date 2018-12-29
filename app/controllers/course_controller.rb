@@ -61,7 +61,7 @@ class CourseController < ApplicationController
   end
 
   def usr_q_data_create
-    (0..4).each do |n|
+    (0..$quiz.length-1).each do |n|
       q = $quiz[n]
       old_data = UserQuizDatum.where(usr_id: $usr_id).find_by(q_id: q.id)
       if old_data then
