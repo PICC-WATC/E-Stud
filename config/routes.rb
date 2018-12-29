@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/course', to: 'course#top'
   post '/course', to: 'course#update'
   get '/result', to: 'course#last'
+  post '/result', to: 'course#last'
+  post '/show', to: 'course#show'
 # choose course
   get '/choose_course', to: 'choose_course#top'
 # history

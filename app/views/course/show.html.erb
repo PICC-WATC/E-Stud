@@ -1,0 +1,27 @@
+<p>
+    <%= @q.q_text %>
+</p>
+<p>
+    <ol>
+        <% @choices.each do |c| %>
+            <% if  c then %>
+                <% f1 = c == @q.answer %>
+                <% f2 = c == @select %>
+                <% if f1 then %>
+                    <% c = "<font color='lime'>#{c}</font>"%>
+                <% end %>
+                <% if f2 then %>
+                    <% c = "▷ " + c %>
+                <% else %>
+                    <% c = "　 " + c %>
+                <% end %>
+                <li>
+                    <%= raw c %>    
+                </li>
+            <% end %>
+        <% end %>
+    </ol>
+</p>
+<p>
+    <%= button_to "戻る", :back %>
+</p>
