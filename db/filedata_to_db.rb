@@ -1,6 +1,7 @@
 $data_file = [
     "ept_g4_1",
-    "ept_g4_2"
+    "ept_g4_2",
+    "geography1"
 ]
 
 $quiz_type = [
@@ -25,10 +26,11 @@ def FDhandler(table_name)
                     data = line.strip!.split("^")
                     Quiz.create!(
                         q_text: data[0],
-                        answer: data[data[-3].to_i],
+                        answer: data[data[-4].to_i],
                         choice_id: cnt,
-                        q_type: data[-2],
-                        label: data[-1]
+                        q_type: data[-3],
+                        label: data[-2]
+                        explanation: data[-1]
                     )
                     choices = [nil,nil,nil,nil,nil]
                     for n in 1...data.length-3 do

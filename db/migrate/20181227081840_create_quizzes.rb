@@ -6,6 +6,7 @@ class CreateQuizzes < ActiveRecord::Migration[5.2]
       t.integer :choice_id
       t.string :q_type
       t.string :label
+      t.string :explanation
       t.timestamps
     end
   end
