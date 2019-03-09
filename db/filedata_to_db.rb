@@ -15,6 +15,11 @@ $labels = [
     ["ept", 2, 2]
 ]
 
+$quiz_exp = [
+    ["Countries in the World", "Choose the correct answer.","geography1"],
+    ["英検４級問１", "Choose the correct answer.", "ept1"],
+    ["英検４級120問", "Choose the correct answer.", "ept2"]
+]
 
 def FDhandler(table_name)
     case table_name
@@ -60,6 +65,15 @@ def FDhandler(table_name)
                     name: label[0],
                     q_types: label[1],
                     max: label[2]
+                )
+            end
+
+        when "Quizexp" then
+            $quiz_exp.each do |data|
+                QuizExp.create!(
+                    tittle: data[0],
+                    explanation: data[1],
+                    label: data[2]
                 )
             end    
         else
