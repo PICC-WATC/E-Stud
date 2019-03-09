@@ -1,5 +1,5 @@
 <p>
-    <%= $q.q_text %>
+    <%= simple_format($q.q_text) %>
 </p>
 <ol>
     <%= form_tag(controller: "course", action: "update")  do %>

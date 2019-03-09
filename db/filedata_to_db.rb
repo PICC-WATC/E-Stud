@@ -1,14 +1,14 @@
-data_file = [
+$data_file = [
     "ept_g4"
 ]
 
-quiz_type = [
+$quiz_type = [
     "4choice",
     "5choice",
     "entrybox"
 ]
 
-labels = [
+$labels = [
     ["50quiz", 3, 1],
     ["ept", 2, 1]
 ]
@@ -18,13 +18,13 @@ def FDhandler(table_name)
     case table_name
         when "Quiz" then
             cnt = 1
-            data_file.each do |filename|
-                f = open("datafile/" + filename,"r")
+            $data_file.each do |filename|
+                f = open("./db/datafile/" + filename,"r")
                 f.each do |line|
-                    data = line.split("^")
+                    data = line.strip!.split("^")
                     Quiz.create!(
                         q_text: data[0],
-                        answer: data[data[-3]],
+                        answer: data[data[-3].to_i],
                         choice_id: cnt,
                         q_type: data[-2],
                         label: data[-1]
@@ -40,18 +40,19 @@ def FDhandler(table_name)
                         choice_4: choices[3],
                         choice_5: choices[4]
                     )
+                    cnt += 1
                 end
             end
 
         when "Quiztype" then
-            quiz_type.each do |typename|
+            $quiz_type.each do |typename|
                 QuizType.create!(
                     name: typename
                 )
             end
 
         when "Label" then
-            labels.each do |label|
+            $labels.each do |label|
                 Label.create!(
                     name: label[0],
                     q_types: label[1],
