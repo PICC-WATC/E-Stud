@@ -1,12 +1,11 @@
+
 <p>
+    問題を選択(現在は五択問題のみ)
     <%= form_tag(course_path, method: :get) do  %>
-        <%= select_tag  :label, options_for_select(Label.all.map{|l| l.name}), {prompt: '問題の分野を選択'}
-        #, {data: {remote: true }}
-         %>
+        <%= select_tag 'num', options_for_select(Label.all.map{|n| n.id.to_s()}) %>
 
-        <div id = "type-select">
-        </div>
-
-        <%= submit_tag("問題へ") %>
+    <%= submit_tag("問題へ") %>
     <% end %>
+    
+
 </p>
