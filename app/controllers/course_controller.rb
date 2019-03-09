@@ -2,6 +2,7 @@ class CourseController < ApplicationController
 
   def top
     $quiz = Quiz.where(q_type: "4choice").where(label: "ept" + params[:num])
+    $q_exp = QuizExp.where(label: "ept" + params[:num])
     $correct = 0
     $nums = 0
     $answer_table = []
@@ -31,7 +32,7 @@ class CourseController < ApplicationController
         u_answer = "<font color='red'>#{u_answer}</font>"
         $checker.push(false)
       end
-      $answer_table.push([$nums,r_answer,u_answer])
+      $answer_table.push([$nums,$q.q_text,r_answer,u_answer,$q.explanation])
     rescue => exception
     end
   end

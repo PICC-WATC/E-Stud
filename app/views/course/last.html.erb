@@ -3,31 +3,17 @@
     <%= @msg %>
 </p>
     <table>
-        <tr>
-            <td>
-                問題番号
-            </td>
-            <td>
-                正解
-            </td>
-            <td>
-                あなたの解答
-            </td>
-            <td>
-                表示
-            </td>
-        <tr>
-
         <% $answer_table.each do |a_t| %>
         <tr>
-            <%a_t.each do |d| %>
-                <td>
-                    <%= raw d %>
-                </td>
-            <% end %>
-            <td>
-                <%= button_to '問題文表示', controller: "course", action: "show", data: a_t %>
-            </td>
+            <p>
+                <%= a_t[0] + a_t[1] %>
+            <p>
+            <p>
+                <%= "答え:" + a_t[2] + "    あなたの解答:" + a_t[3] %>
+            </p>
+            <p>
+                <%= a_t[4] %>
+            </p>
         </tr>
         <% end %>
         
