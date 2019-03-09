@@ -1,8 +1,8 @@
 class CourseController < ApplicationController
 
   def top
-    $q_type = "5choice"
-    $label = "50quiz" + "1"
+    $q_type = "4choice"
+    $label = "ept" + "1"
     $usr_id = 1
     $quiz = Quiz.where(q_type: $q_type).where(label: $label)
     $correct = 0

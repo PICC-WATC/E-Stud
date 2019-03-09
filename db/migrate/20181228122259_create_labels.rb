@@ -12,5 +12,6 @@ end
 =begin
 q_types 対応表
 1 5choice
-2 enterybox
+2 4choice
+4 enterybox
 =end
