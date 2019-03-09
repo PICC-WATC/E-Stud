@@ -1,0 +1,2 @@
+class UserQuizDatum < ApplicationRecord
+end

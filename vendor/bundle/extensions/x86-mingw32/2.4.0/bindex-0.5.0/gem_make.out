@@ -1,5 +1,5 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
-C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-10408-1wt3m1u.rb extconf.rb
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181229-15848-gpeidk.rb extconf.rb
 creating Makefile
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
@@ -13,4 +13,4 @@ linking shared-object bindex/cruby.so
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20181228-10408-12nwnxi/bindex
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20181229-15848-e5pbpv/bindex

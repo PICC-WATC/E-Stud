@@ -1,5 +1,5 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
-C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-10408-1yi57vx.rb extconf.rb
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181229-15848-eoghak.rb extconf.rb
 creating Makefile
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
@@ -13,4 +13,4 @@ linking shared-object websocket_mask.so
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20181228-10408-dgcm0h
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20181229-15848-mtna6q

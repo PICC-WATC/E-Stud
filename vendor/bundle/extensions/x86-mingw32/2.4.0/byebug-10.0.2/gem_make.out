@@ -1,5 +1,5 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/byebug-10.0.2/ext/byebug
-C:/Ruby24/bin/ruby.exe -r ./siteconf20181228-10408-1gpz1o9.rb extconf.rb
+C:/Ruby24/bin/ruby.exe -r ./siteconf20181229-15848-kv04w.rb extconf.rb
 creating Makefile
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/byebug-10.0.2/ext/byebug
@@ -17,4 +17,4 @@ linking shared-object byebug/byebug.so
 
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/byebug-10.0.2/ext/byebug
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 byebug.so ./.gem.20181228-10408-1q3vmgt/byebug
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20181229-15848-8g9mxf/byebug
