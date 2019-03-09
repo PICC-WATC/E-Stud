@@ -34,7 +34,7 @@ def FDhandler(table_name)
                         answer: data[data[-4].to_i],
                         choice_id: cnt,
                         q_type: data[-3],
-                        label: data[-2]
+                        label: data[-2],
                         explanation: data[-1]
                     )
                     choices = [nil,nil,nil,nil,nil]
@@ -71,7 +71,7 @@ def FDhandler(table_name)
         when "Quizexp" then
             $quiz_exp.each do |data|
                 QuizExp.create!(
-                    tittle: data[0],
+                    title: data[0],
                     explanation: data[1],
                     label: data[2]
                 )

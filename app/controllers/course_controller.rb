@@ -2,7 +2,7 @@ class CourseController < ApplicationController
 
   def top
     $quiz = Quiz.where(q_type: "4choice").where(label: "ept" + params[:num])
-    $q_exp = QuizExp.where(label: "ept" + params[:num])
+    $q_exp = QuizExp.find_by(label: "ept" + params[:num])
     $correct = 0
     $nums = 0
     $answer_table = []

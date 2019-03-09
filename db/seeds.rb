@@ -18,3 +18,4 @@ User.create!(name: "Administrator",
 FDhandler("Quiz")
 FDhandler("Quiztype")
 FDhandler("Label")
+FDhandler("Quizexp")
