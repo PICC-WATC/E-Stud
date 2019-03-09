@@ -1,5 +1,6 @@
 $data_file = [
-    "ept_g4"
+    "ept_g4_1",
+    "ept_g4_2"
 ]
 
 $quiz_type = [
@@ -10,7 +11,7 @@ $quiz_type = [
 
 $labels = [
     ["50quiz", 3, 1],
-    ["ept", 2, 1]
+    ["ept", 2, 2]
 ]
 
 
