@@ -38,7 +38,7 @@ def FDhandler(table_name)
                         explanation: data[-1]
                     )
                     choices = [nil,nil,nil,nil,nil]
-                    for n in 1...data.length-3 do
+                    for n in 1...data.length-4 do
                         choices[n-1] = data[n]
                     end
                     Choice.create!(

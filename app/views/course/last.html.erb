@@ -4,17 +4,21 @@
 </p>
     <table>
         <% $answer_table.each do |a_t| %>
-        <tr>
+        <tr><td>
             <p>
-                <%= a_t[0] + a_t[1] %>
+                <%= a_t[0] %>.
+            </p>
+            <p>
+                <%= simple_format(a_t[1]) %>
             <p>
             <p>
-                <%= "答え:" + a_t[2] + "    あなたの解答:" + a_t[3] %>
+                正解 : <%= a_t[2] %><br>
+                解答 : <%= a_t[3] %>
             </p>
             <p>
                 <%= a_t[4] %>
             </p>
-        </tr>
+        </td></tr>
         <% end %>
         
     </table>

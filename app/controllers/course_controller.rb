@@ -2,7 +2,7 @@ class CourseController < ApplicationController
 
   def top
     $quiz = Quiz.where(q_type: "4choice").where(label: "ept" + params[:num])
-    $q_exp = QuizExp.find_by(label: "ept" + params[:num])
+    $q_exp = QuizExp.find_by(label: + params[:num])
     $correct = 0
     $nums = 0
     $answer_table = []
@@ -10,7 +10,9 @@ class CourseController < ApplicationController
   end
 
   def update
-    check
+    if $nums != 0
+      check
+    end
     $q = $quiz[$nums]
     @select = Select.new
     if $q then
@@ -22,8 +24,8 @@ class CourseController < ApplicationController
   end
 
   def check
+    r_answer = $q.answer
     begin
-      r_answer = $q.answer
       u_answer =  eval("$choices.choice_#{params[:num]}")
       if r_answer == u_answer then
         $correct += 1
@@ -32,9 +34,11 @@ class CourseController < ApplicationController
         u_answer = "<font color='red'>#{u_answer}</font>"
         $checker.push(false)
       end
-      $answer_table.push([$nums,$q.q_text,r_answer,u_answer,$q.explanation])
     rescue => exception
+      u_answer = ""
+      $checker.push(false)
     end
+    $answer_table.push([$nums,$q.q_text,r_answer,u_answer,$q.explanation])
   end
   
   def show

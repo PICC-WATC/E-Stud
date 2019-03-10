@@ -1,7 +1,10 @@
 current directory: C:/Users/admin/Documents/E-Stud/vendor/bundle/gems/sqlite3-1.4.0/ext/sqlite3
-C:/Ruby24/bin/ruby.exe -r ./siteconf20190309-18344-1cctjwe.rb extconf.rb
-checking for sqlite3.h... no
-sqlite3.h is missing. Install SQLite3 from http://www.sqlite.org/ first.
+C:/Ruby24/bin/ruby.exe -r ./siteconf20190310-13736-1gat3lx.rb extconf.rb
+checking for sqlite3.h... yes
+checking for pthread_create() in -lpthread... yes
+checking for -ldl... no
+checking for dlopen()... no
+missing function dlopen
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary
 libraries and/or headers.  Check the mkmf.log file for more details.  You may
@@ -33,6 +36,10 @@ Provided configuration options:
 	--without-sqlite3-include=${sqlite3-dir}/include
 	--with-sqlite3-lib
 	--without-sqlite3-lib=${sqlite3-dir}/lib
+	--with-pthreadlib
+	--without-pthreadlib
+	--with-dllib
+	--without-dllib
 
 To see why this extension failed to compile, please check the mkmf.log which can be found here:
 
