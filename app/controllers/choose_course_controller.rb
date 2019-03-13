@@ -1,5 +1,15 @@
 class ChooseCourseController < ApplicationController
   def top
+    @l_data = Label.all
+    $labels = []
+    @l_data.each do |ld|
+      $labels << ld.name
+    end
+  end
+
+  def update
+    data = { :text => params[:label] }
+    render partial: 'ajax_partial', locals: { :data => data }
   end
 
   def dynamic_course_list

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/show', to: 'course#show'
 # choose course
   get '/choose_course', to: 'choose_course#top'
+  post '/choose_course', to: 'choose_course#update', as: 'ajax_update'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
