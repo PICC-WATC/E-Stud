@@ -2,3 +2,4 @@
         <%= select_tag 'num', options_for_select([*1..(Label.find_by(name: data[:text]).max)]) %>
         <% select_tag 'l_data', options_for_select([data[:text]]) %>
     <%= submit_tag("問題へ") %>
+    <% end %>
