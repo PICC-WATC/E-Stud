@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require("./db/filedata_to_db.rb")
 
-#User.create!(name: "Administrator",
- #            email: "admin@picc.com", 
-  #           password: "dododo",
-   #          password_confirmation: "dododo", 
-    #         admin: true,
-     #        activated: true,
-      #       activated_at: Time.zone.now)
+User.create!(name: "Administrator",
+             email: "admin@picc.com",
+             password: "dododo",
+             password_confirmation: "dododo",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 FDhandler("Quiz")
 FDhandler("Quiztype")

@@ -70,7 +70,7 @@ def FDhandler(table_name)
                     explanation: data[1],
                     label: data[2]
                 )
-            end    
+            end
         else
     end
 end

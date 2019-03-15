@@ -1,0 +1,13 @@
+
+<p>
+    問題を選択(現在は4択問題のみ)
+    <%= form_tag(course_path, method: :get, remote: true) do  %>
+      <div id="label_area" >
+        <%= select_tag :label_name, options_for_select([*@labels]) %>
+      </div>
+      <div id="num_area" >
+        <%= render partial: 'select_num', locals: {label_name: Label.first.name} %>
+      </div>
+      <%= submit_tag("問題へ") %>
+    <% end %>
+</p>

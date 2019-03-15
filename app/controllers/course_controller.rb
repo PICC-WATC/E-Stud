@@ -1,8 +1,8 @@
 class CourseController < ApplicationController
 
   def top
-    $quiz = Quiz.where(q_type: "4choice").where(label: params[:l_data] + params[:num])
-    $q_exp = QuizExp.find_by(label: + params[:num])
+    $quiz = Quiz.where(q_type: "4choice").where(label: params[:label_name] + params[:num])
+    $q_exp = QuizExp.find_by(label: params[:label_name])
     $correct = 0
     $nums = 0
     $answer_table = []
@@ -40,7 +40,7 @@ class CourseController < ApplicationController
     end
     $answer_table.push([$nums,$q.q_text,r_answer,u_answer,$q.explanation])
   end
-  
+
   def show
     data = params[:data]
     @select = data[2]
@@ -95,7 +95,7 @@ class CourseController < ApplicationController
                       continuity: conti,
                       correct: corr,
                       miss: mis,
-                      clear: false)  
+                      clear: false)
       end
     end
   end

@@ -7,7 +7,7 @@ ruby '~> 2.4.4'
 gem 'rails', '~> 5.2.1'
 gem 'will_paginate'
 #gem 'bcrypt', '~> 3.1.12', platforms: [:ruby, :x64_mingw, :mingw]
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'rails-controller-testing'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
