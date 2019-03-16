@@ -13,14 +13,14 @@
             <p>
             <p>
                 正解 : <%= a_t[2] %><br>
-                解答 : <%= a_t[3] %>
+                解答 : <%= raw a_t[3] %>
             </p>
             <p>
                 <%= a_t[4] %>
             </p>
         </td></tr>
         <% end %>
-        
+
     </table>
 <p>
     <%= button_to("選択画面へ", '/choose_course', :method => :get) %>
