@@ -8,9 +8,9 @@
 require("./db/filedata_to_db.rb")
 
 User.create!(name: "Administrator",
-             email: "admin@picc.com", 
+             email: "admin@picc.com",
              password: "dododo",
-             password_confirmation: "dododo", 
+             password_confirmation: "dododo",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
@@ -18,3 +18,4 @@ User.create!(name: "Administrator",
 FDhandler("Quiz")
 FDhandler("Quiztype")
 FDhandler("Label")
+FDhandler("Quizexp")

@@ -1,0 +1,190 @@
+"pkg-config --exists sqlite3"
+| pkg-config --libs sqlite3
+=> "-LC:/Ruby24/msys32/mingw32/lib -lsqlite3\n"
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe conftest.c  -L. -LC:/Ruby24/lib -L. -pipe     -lmsvcrt-ruby240  -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe conftest.c  -L. -LC:/Ruby24/lib -L. -pipe     -lmsvcrt-ruby240 -LC:/Ruby24/msys32/mingw32/lib -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+| pkg-config --cflags-only-I sqlite3
+=> "-IC:/Ruby24/msys32/mingw32/include\n"
+| pkg-config --cflags-only-other sqlite3
+=> "\n"
+| pkg-config --libs-only-l sqlite3
+=> "-lsqlite3\n"
+package configuration for sqlite3
+cflags: 
+ldflags: -LC:/Ruby24/msys32/mingw32/lib
+libs: -lsqlite3
+
+find_header: checking for sqlite3.h... -------------------- yes
+
+"i686-w64-mingw32-gcc -E -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <sqlite3.h>
+/* end */
+
+--------------------
+
+find_library: checking for pthread_create() in -lpthread... -------------------- yes
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe  conftest.c  -L. -LC:/Ruby24/lib -L. -pipe -LC:/Ruby24/msys32/mingw32/lib     -lsqlite3 -lmsvcrt-ruby240 -lpthread  -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:57: error: 'pthread_create' undeclared (first use in this function); did you mean 'rb_thread_create'?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))pthread_create; return !p; }
+                                                         ^~~~~~~~~~~~~~
+                                                         rb_thread_create
+conftest.c:16:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))pthread_create; return !p; }
+/* end */
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe  conftest.c  -L. -LC:/Ruby24/lib -L. -pipe -LC:/Ruby24/msys32/mingw32/lib     -lsqlite3 -lmsvcrt-ruby240 -lpthread  -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: extern void pthread_create();
+17: int t(void) { pthread_create(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -ldl... -------------------- no
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe  conftest.c  -L. -LC:/Ruby24/lib -L. -pipe -LC:/Ruby24/msys32/mingw32/lib    -lpthread  -lsqlite3 -lmsvcrt-ruby240 -ldl -lpthread  -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+C:/Ruby24/msys32/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -ldl
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: 
+17: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlopen()... -------------------- no
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe  conftest.c  -L. -LC:/Ruby24/lib -L. -pipe -LC:/Ruby24/msys32/mingw32/lib    -lpthread  -lsqlite3 -lmsvcrt-ruby240 -lpthread  -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:16:57: error: 'dlopen' undeclared (first use in this function); did you mean '_lopen'?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+                                                         ^~~~~~
+                                                         _lopen
+conftest.c:16:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+/* end */
+
+"i686-w64-mingw32-gcc -o conftest.exe -IC:/Ruby24/include/ruby-2.4.0/i386-mingw32 -IC:/Ruby24/include/ruby-2.4.0/ruby/backward -IC:/Ruby24/include/ruby-2.4.0 -I. -IC:/Ruby24/msys32/mingw32/include -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0501 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -march=i686 -mtune=generic -O2 -pipe  conftest.c  -L. -LC:/Ruby24/lib -L. -pipe -LC:/Ruby24/msys32/mingw32/lib    -lpthread  -lsqlite3 -lmsvcrt-ruby240 -lpthread  -lsqlite3 -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+C:\Users\admin\AppData\Local\Temp\cccUz6Nc.o:conftest.c:(.text+0x4): undefined reference to `dlopen'
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+16: extern void dlopen();
+17: int t(void) { dlopen(); return 0; }
+/* end */
+
+--------------------
+

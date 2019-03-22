@@ -1,5 +1,13 @@
 class ChooseCourseController < ApplicationController
-  def top
+  def index
+    @labels = []
+    Label.all.each do |ld|
+      @labels << ld.name
+    end
+  end
+
+  def get_num
+    render partial: 'select_num', locals: { label_name: params[:label_name] }
   end
 
   def dynamic_course_list

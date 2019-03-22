@@ -1,46 +1,49 @@
-$data_file = [
-    "ept_g4"
-]
-
 $quiz_type = [
-    "4choice",
     "5choice",
+    "4choice",
     "entrybox"
 ]
 
 $labels = [
-    ["50quiz", 3, 1],
-    ["ept", 2, 1]
+    ["ept_g4", 2, 9],
+    ["geography", 2, 1]
 ]
 
+$quiz_exp = [
+    ["Countries in the World", "Choose the correct answer.","geography"],
+    ["英検４級過去問　問１", "Choose the correct answer.", "ept_g4"],
+]
 
 def FDhandler(table_name)
     case table_name
         when "Quiz" then
             cnt = 1
-            $data_file.each do |filename|
-                f = open("./db/datafile/" + filename,"r")
-                f.each do |line|
-                    data = line.strip!.split("^")
-                    Quiz.create!(
-                        q_text: data[0],
-                        answer: data[data[-3].to_i],
-                        choice_id: cnt,
-                        q_type: data[-2],
-                        label: data[-1]
-                    )
-                    choices = [nil,nil,nil,nil,nil]
-                    for n in 1...data.length-3 do
-                        choices[n-1] = data[n]
+            $labels.each do |d|
+                for n in 1..d[2]
+                    f = open("./db/datafile/" + d[0]+ "_" + n.to_s,"r")
+                    f.each do |line|
+                        data = line.strip!.split("^")
+                        Quiz.create!(
+                            q_text: data[0],
+                            answer: data[data[-4].to_i],
+                            choice_id: cnt,
+                            q_type: data[-3],
+                            label: data[-2],
+                            explanation: data[-1]
+                        )
+                        choices = [nil,nil,nil,nil,nil]
+                        for n in 1...data.length-4 do
+                            choices[n-1] = data[n]
+                        end
+                        Choice.create!(
+                            choice_1: choices[0],
+                            choice_2: choices[1],
+                            choice_3: choices[2],
+                            choice_4: choices[3],
+                            choice_5: choices[4]
+                        )
+                        cnt += 1
                     end
-                    Choice.create!(
-                        choice_1: choices[0],
-                        choice_2: choices[1],
-                        choice_3: choices[2],
-                        choice_4: choices[3],
-                        choice_5: choices[4]
-                    )
-                    cnt += 1
                 end
             end
 
@@ -58,7 +61,16 @@ def FDhandler(table_name)
                     q_types: label[1],
                     max: label[2]
                 )
-            end    
+            end
+
+        when "Quizexp" then
+            $quiz_exp.each do |data|
+                QuizExp.create!(
+                    title: data[0],
+                    explanation: data[1],
+                    label: data[2]
+                )
+            end
         else
     end
 end
