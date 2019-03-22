@@ -10,27 +10,34 @@
   </head>
 
   <header>
-    <%= link_to "E-Stud", root_path, id: "logo" %>
+    <%= link_to "E-Stud", root_path, class: "header-logo" %>
     <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+      <div class="header-list">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help", help_path %></li>
+          <% if logged_in? %>
+            <li>
+            <%= link_to "Account", choose_course_path %>
+              
+            </li>
+          <% else %>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="header-user-list">
         <% if logged_in? %>
-          <li>
-          <%= link_to "Account", choose_course_path %>
-            <ul>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li><%= link_to "Log out", logout_path, method: :delete %></li>
-              <% if current_user.admin? && current_user?(current_user) %>
-                <li><%= link_to "Users", users_path %></li>
-              <% end %>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <ul>
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <% if current_user.admin? && current_user?(current_user) %>
+              <li><%= link_to "Users", users_path %></li>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
+      </div>
     </nav>
   </header>
 
