@@ -16,7 +16,12 @@ class CourseController < ApplicationController
     $q = $quiz[$nums]
     @select = Select.new
     if $q then
-     $choices = Choice.find($q.choice_id)
+     choices = Choice.find($q.choice_id)
+     $choices = []
+     (1..5).each do |n|
+       $choices << eval("choices.choice_#{n}")
+     end
+      $choices.shuffle!
      $nums += 1
     else
       redirect_to '/result'
@@ -26,7 +31,7 @@ class CourseController < ApplicationController
   def check
     r_answer = $q.answer
     begin
-      u_answer =  eval("$choices.choice_#{params[:num]}")
+      u_answer =  $choices[params[:num].to_i-1]
       if r_answer == u_answer then
         $correct += 1
         $checker.push(true)

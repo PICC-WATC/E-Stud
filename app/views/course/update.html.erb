@@ -10,11 +10,12 @@
 </p>
 <ol>
     <%= form_tag(controller: "course", action: "update")  do %>
-        <% (1..5).each do |n| %>
-            <% if eval("$choices.choice_#{n}") then %>
+        <% n = 0 %>
+        <% $choices.each do |c| %>
+            <% if c then %>
                 <li>
-                    <%= radio_button_tag(:num, n) %>
-                    <%= label_tag("num_#{n}", eval("$choices.choice_#{n}")) %>    
+                    <%= radio_button_tag(:num, n += 1) %>
+                    <%= label_tag(:u_answer, c) %>
                 </li>
             <% end %>
         <% end %>
