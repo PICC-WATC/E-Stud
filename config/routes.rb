@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root  to: 'static_pages#home'
+  root  to: 'static_pages#info'
   get '/help', to: 'static_pages#help'
   get '/contact', to: 'static_pages#contact'
   get '/about', to: 'static_pages#about'
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
 # info
-  get '/info', to: 'static_pages#info'
   get '/info/modify', to: 'static_pages#modify'
   post '/info/modify', to: 'static_pages#modify'
   post '/info/update', to: 'static_pages#update'
