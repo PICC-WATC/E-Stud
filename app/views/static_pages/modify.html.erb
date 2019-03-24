@@ -1,4 +1,4 @@
-<%= button_to "新規追加", action: "create_form" %>
+<%= button_to "新規追加", {:action => "create_form"}, {method: :get} %>
 <%= form_tag(action: "update") do  %>
 <%= button_to '完了' %>
 <table>
@@ -16,7 +16,7 @@
       <%= button_to "内容変更", { :action => "update_form", :id => i.id } %>
     </td>
     <td>
-      <%= button_to "削除", { :action => "info_destroy", :id => i.id }, :confirm => "本当に削除しますか?", :method => "delete"%>
+      <%= button_to "削除", { :action => "info_destroy", :id => i.id }, :confirm => "本当に削除しますか?", :method => "delete" %>
     </td>
     </tr>
   <% end %>

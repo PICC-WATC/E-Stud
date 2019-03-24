@@ -13,13 +13,11 @@ Rails.application.routes.draw do
 # info
   get '/info', to: 'static_pages#info'
   get '/info/modify', to: 'static_pages#modify'
-  post '/info/modify', to: 'static_pages#modify'
   post '/info/update', to: 'static_pages#update'
-  post '/info/create_form', to: 'static_pages#create_form'
   get '/info/create_form', to: 'static_pages#create_form'
   post '/info/info_create', to: 'static_pages#info_create'
-  post '/info/update_form', to: 'static_pages#update_form'
   get '/info/update_form', to: 'static_pages#update_form'
+  post '/info/update_form', to: 'static_pages#update_form'
   post '/info/info_update', to: 'static_pages#info_update'
   delete '/info/destroy', to: 'static_pages#info_destroy'
 # course
