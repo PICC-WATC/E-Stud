@@ -40,7 +40,6 @@ class StaticPagesController < ApplicationController
 
     def update_form
       $i_d = Info.find(params[:id])
-
     end
 
     def info_update
