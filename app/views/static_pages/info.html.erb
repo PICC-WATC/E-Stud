@@ -1,0 +1,22 @@
+<div id="action">
+<% if logged_in?%>
+  <% if current_user.admin? && current_user?(current_user) %>
+  <%= button_to "編集", {:action => "modify"}, {method: :get} %>
+  </div>
+  <% end %>
+<% end %>
+<table>
+  <th>掲示情報</th>
+  <% @info.each do |i| %>
+  <tr>
+    <td>
+      <% if i.use %>
+        <font color="green" id="used_tag">○</font>
+      <% else %>
+        <font color="red" id="used_tag">X</font>
+      <% end %>
+      <%= i.content %>
+    </td>
+  </tr>
+  <% end %>
+</table>
