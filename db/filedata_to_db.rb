@@ -6,12 +6,14 @@ $quiz_type = [
 
 $labels = [
     ["ept_g4", 2, 9],
+    ["ept_g5", 2, 23],
     ["geography", 2, 1]
 ]
 
 $quiz_exp = [
     ["Countries in the World", "Choose the correct answer.","geography"],
-    ["英検４級過去問　問１", "Choose the correct answer.", "ept_g4"],
+    ["英検４級過去問　大問１", "Choose the correct answer.", "ept_g4"],
+    ["英検５級過去問　大問１", "Choose the correct answer.", "ept_g5"]
 ]
 
 def FDhandler(table_name)
