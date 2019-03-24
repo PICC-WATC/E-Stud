@@ -1,8 +1,9 @@
 class ChooseCourseController < ApplicationController
   def index
+    @name_trans = {"ept_g4" => "英検4級","ept_g5" => "英検５級","geography" => "英語で地理"}
     @labels = []
     Label.all.each do |ld|
-      @labels << ld.name
+      @labels << @name_trans[ld.name]
     end
   end
 
