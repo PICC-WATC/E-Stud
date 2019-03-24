@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~> 2.4.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 gem 'will_paginate'
 #gem 'bcrypt', '~> 3.1.12', platforms: [:ruby, :x64_mingw, :mingw]
 gem 'bcrypt'
@@ -24,7 +24,14 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
+# Use Redis adapter to run Action Cable in
+
+#necessary for security
+gem "actionview", ">= 5.2.2.1"
+gem "railties", ">= 5.2.2.1"
+gem "nokogiri", ">= 1.8.5"
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
