@@ -13,3 +13,123 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    background-color: blueviolet;
+    width: 100%;
+    padding: 0 0 50px 0;
+}
+
+header li{
+    list-style: none;
+}
+
+.top-bar {
+    margin: 0 auto;
+}
+
+.header-logo {
+    margin: 0 0;
+    float: left;
+    background-color: darkgreen;
+}
+
+.header-right {
+    background-color: aliceblue;
+    float: right;
+}
+
+.login ul {
+    margin: 0 0;
+}
+
+#menuOn{
+    display: none;
+}
+
+menu {
+    position: relative;
+    margin: 0 0;
+    font-size   : 20px;
+    line-height : 20px;
+    height      : 100%;
+    width       : 80px;
+    background  : black;
+}
+
+#menuOn:checked + menu {
+    max-width : 960px;/*コンテナと同じ数値を指定しておく必要あり*/
+    z-index   : 20;
+}
+
+#menuOn:checked + menu + div.overlay{
+    position : fixed;
+    top      :  0;
+    bottom   :  0;
+    left     :  0;
+    right    :  0;
+    z-index  : 10;
+    background : rgba(0,0,0,0.5);
+  }
+  #menuOn:checked + menu ul{
+    display: block;
+  }
+  
+  .menu ul{
+    position: absolute;
+    top    : 40px;
+    right  : 0;
+    display: none;
+  }
+  
+  .menu li{
+    list-style-type : none;
+    /* メニュー要素の背景色と合わせる*/
+    background      : black;
+    min-width       :  105px;
+    max-width       :  200px;
+    white-space     : nowrap;
+    text-overflow   : ellipsis;
+  }
+  
+  .menu li a{
+    display       : block;
+    padding       :  10px;
+  }
+  
+  /* ハンバーガーメニュー */
+  #menuOn + menu::after {
+    position     : absolute;
+    z-index      : 30;
+    display      : block;
+    content      : '\2261';/* ハンバーガーメニュー*/
+    line-height  : 40px;
+    width        : 20px;
+    padding-left : 10px;
+    color        : white;
+    right        :  0;
+    top          :  0;
+    background   : black;
+  }
+  
+  /* メニューを閉じる */
+  #menuOn:checked + menu::after {
+    content : '×';/* 閉じるボタン */
+  }
+
+
+.top-wrapper {
+    padding: 300px 0 100px 0;
+    background-color: aqua;
+}
