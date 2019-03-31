@@ -1,0 +1,2 @@
+module QuizDataInsertHelper
+end

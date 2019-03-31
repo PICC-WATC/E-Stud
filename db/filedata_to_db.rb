@@ -22,9 +22,11 @@ def FDhandler(table_name)
     case table_name
         when "Quiz" then
             cnt = 1
+            file = open("./data/fn.txt","w")
             $labels.each do |d|
                 for n in 1..d[2]
                     f = open("./db/datafile/" + d[0]+ "_" + n.to_s,"r")
+                    file.write(d[0]+ "_" + n.to_s+"\n")
                     f.each do |line|
                         data = line.strip!.split("^")
                         Quiz.create!(
@@ -49,6 +51,7 @@ def FDhandler(table_name)
                         cnt += 1
                     end
                 end
+                file.close()
             end
 
         when "Quiztype" then

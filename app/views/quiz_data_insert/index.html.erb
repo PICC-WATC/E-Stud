@@ -1,0 +1,11 @@
+<%= form_tag("/datainsert/exec", :multipart => true) do  %>
+  <div class="checker">
+    <%= check_box_tag :exist, true %>既存の説明データを使用
+  </div>
+  <div class="exp_data">
+    タイトル：<%= text_field_tag :title %>
+    回答指示：<%= text_field_tag :exp %>
+  </div>
+    <%= file_field_tag "fd[]", multiple: true %>
+    <%= submit_tag "登録" %>
+<% end %>
