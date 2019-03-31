@@ -1,8 +1,9 @@
+require("./app/controllers/controllers_g_var.rb")
 class CourseController < ApplicationController
 
   def top
-    $quiz = Quiz.where(q_type: "4choice").where(label: params[:label_name] + params[:num])
-    $q_exp = QuizExp.find_by(label: params[:label_name])
+    $quiz = Quiz.where(q_type: "4choice").where(label: $name_trans[params[:label_name]] + params[:num])
+    $q_exp = QuizExp.find_by(label: $name_trans[params[:label_name]])
     $correct = 0
     $nums = 0
     $answer_table = []
@@ -18,7 +19,7 @@ class CourseController < ApplicationController
     if $q then
      choices = Choice.find($q.choice_id)
      $choices = []
-     (1..5).each do |n|
+     (1..4).each do |n|
        $choices << eval("choices.choice_#{n}")
      end
       $choices.shuffle!

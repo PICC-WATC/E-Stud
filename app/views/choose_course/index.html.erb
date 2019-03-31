@@ -3,7 +3,7 @@
     問題を選択(現在は4択問題のみ)
     <%= form_tag(course_path, method: :get) do  %>
       <div id="label_area" >
-        <%= select_tag :label_name, options_for_select([*@labels]) %>
+        <%= select_tag :label_name, options_for_select([*@labels_ja]) %>
       </div>
       <div id="num_area" >
         <%= render partial: 'select_num', locals: {label_name: Label.first.name} %>

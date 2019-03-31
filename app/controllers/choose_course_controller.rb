@@ -1,14 +1,14 @@
+require("./app/controllers/controllers_g_var.rb")
 class ChooseCourseController < ApplicationController
   def index
-    @name_trans = {"ept_g4" => "英検4級","ept_g5" => "英検５級","geography" => "英語で地理"}
-    @labels = []
+    @labels_ja = []
     Label.all.each do |ld|
-      @labels << @name_trans[ld.name]
+      @labels_ja << $name_trans[ld.name]
     end
   end
 
   def get_num
-    render partial: 'select_num', locals: { label_name: params[:label_name] }
+    render partial: 'select_num', locals: { label_name: $name_trans[params[:label_name]] }
   end
 
   def dynamic_course_list
