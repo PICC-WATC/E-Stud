@@ -4,12 +4,12 @@
 <table>
   <th>掲示情報</th>
   <% @info.each do |i| %>
-  <tr>
-    <td>
-      <% if i.use %>
-        <%= i.content %>
-      <% end %>      
-    </td>
-  </tr>
+    <% if i.use then %>
+      <tr>
+        <td>
+            <%= i.content %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>

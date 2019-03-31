@@ -1,6 +1,6 @@
 <%= button_to "新規追加", {:action => "create_form"}, {method: :get} %>
 <%= form_tag(action: "update") do  %>
-<%= button_to '完了' %>
+<%= submit_tag("保存") %>
 <table>
   <% @info.each do |i| %>
     <tr>
@@ -21,4 +21,5 @@
     </tr>
   <% end %>
 </table>
+
 <% end %>
