@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <% if current_user.admin? && current_user?(current_user) %>
     <div id="action">
-      <%= button_to "編集", {:action => "modify"}, {method: :get} %>
+      <%= button_to "編集", {:action => "modify"}, {method: :get, class: "btn btn-primary"} %>
     </div>
   <% end %>
 <% end %>
