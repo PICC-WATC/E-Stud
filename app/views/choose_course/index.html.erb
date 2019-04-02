@@ -8,6 +8,6 @@
       <div id="num_area" >
         <%= render partial: 'select_num', locals: {label_name: Label.first.name} %>
       </div>
-      <%= submit_tag("問題へ") %>
+      <%= submit_tag("問題へ", class: "btn btn-primary") %>
     <% end %>
 </p>

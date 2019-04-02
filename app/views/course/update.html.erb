@@ -8,17 +8,22 @@
     <%= $nums.to_s + "/" + $quiz.length.to_s %>
     <%= simple_format($q.q_text) %>
 </p>
-<ol>
-    <%= form_tag(controller: "course", action: "update")  do %>
-        <% n = 0 %>
-        <% $choices.each do |c| %>
-            <% if c then %>
-                <li>
-                    <%= radio_button_tag(:num, n += 1) %>
-                    <%= label_tag(:u_answer, c) %>
-                </li>
+<%= form_tag(controller: "course", action: "update")  do %>
+    <% select_n = 0 %>
+    <div class="">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <% $choices.each do |c| %>
+                <% if c then %>
+                    <div class="tog-btn">
+                        <label class="btn btn-outline-secondary py-1 px-2">
+                            <div class="d-none"><%= radio_button_tag("num", select_n += 1, autocomplete: 'off') %></div>
+                            <%= select_n.to_s + ". " + c %>
+                        </label>
+                        <!--<%= label_tag("num_#{select_n}", c, {class: "btn btn-outline-secondary py-1 px-2"}) %>-->
+                    </div>
+                <% end %>
             <% end %>
-        <% end %>
-        <%= submit_tag("次へ") %>
-    <% end %>
-</ol>
+        </div>
+    </div>
+    <%= submit_tag("次へ", class: "btn btn-primary") %>
+<% end %>
