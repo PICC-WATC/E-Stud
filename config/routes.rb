@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post '/info/update_form', to: 'static_pages#update_form'
   post '/info/info_update', to: 'static_pages#info_update'
   delete '/info/destroy', to: 'static_pages#info_destroy'
+#datainsert
+  get '/datainsert', to: 'quiz_data_insert#index'
+  post '/datainsert/exec', to: 'quiz_data_insert#insert'
 # course
   get '/course', to: 'course#top'
   post '/course', to: 'course#update'
