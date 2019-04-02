@@ -1,1 +1,1 @@
-<%= select_tag :num, options_for_select([*1..(Label.find_by(name: label_name).max)]) %>
+<%= select_tag :num, options_for_select([*1..(Label.find_by(name: label_name).max)]), class: "form-control" %>
