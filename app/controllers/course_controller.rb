@@ -2,12 +2,16 @@ require("./app/controllers/controllers_g_var.rb")
 class CourseController < ApplicationController
 
   def top
-    $quiz = Quiz.where(q_type: "4choice").where(label: $name_trans[params[:label_name]] + params[:num])
-    $q_exp = QuizExp.find_by(label: $name_trans[params[:label_name]])
-    $correct = 0
-    $nums = 0
-    $answer_table = []
-    $checker = []
+    if params[:commit] == "問題へ" then
+      $quiz = Quiz.where(q_type: "4choice").where(label: $name_trans[params[:label_name]] + params[:num])
+      $q_exp = QuizExp.find_by(label: $name_trans[params[:label_name]])
+      $correct = 0
+      $nums = 0
+      $answer_table = []
+      $checker = []
+    else
+      redirect_to '/choose_course'
+    end
   end
 
   def update
