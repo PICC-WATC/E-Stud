@@ -8,19 +8,22 @@
     <%= $nums.to_s + "/" + $quiz.length.to_s %>
     <%= simple_format($q.q_text) %>
 </p>
-    <%= form_tag(controller: "course", action: "update")  do %>
-        <% select_n = 0 %>
-<div class="">
-        <div class="btn-group" data-toggle="buttons">
+<%= form_tag(controller: "course", action: "update")  do %>
+    <% select_n = 0 %>
+    <div class="">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <% $choices.each do |c| %>
                 <% if c then %>
                     <div class="tog-btn">
-                        <div class="-none"><%= radio_button_tag("num", select_n += 1, autocomplete: 'off') %></div>
-                        <%= label_tag("num_#{select_n}", select_n.to_s + ". " + c, {class: "btn btn-outline-secondary py-1 px-1"}) %>
+                        <label class="btn btn-outline-secondary py-1 px-2">
+                            <div class="d-none"><%= radio_button_tag("num", select_n += 1, autocomplete: 'off') %></div>
+                            <%= select_n.to_s + ". " + c %>
+                        </label>
+                        <!--<%= label_tag("num_#{select_n}", c, {class: "btn btn-outline-secondary py-1 px-2"}) %>-->
                     </div>
                 <% end %>
             <% end %>
         </div>
-</div>
-        <%= submit_tag("次へ", class: "btn btn-primary") %>
-    <% end %>
+    </div>
+    <%= submit_tag("次へ", class: "btn btn-primary") %>
+<% end %>
