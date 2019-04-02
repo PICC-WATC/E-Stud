@@ -45,8 +45,10 @@
 
   <body>
     <div class="top-wrapper">
-      <% flash.each do |message_type, message| %>
-        <div><%= message %></div>
+      <% if flash %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-info"><%= message %></div>
+        <% end %>
       <% end %>
     <%= yield %>
     </div>
