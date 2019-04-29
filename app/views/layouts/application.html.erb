@@ -44,7 +44,7 @@
   </header>
 
   <body>
-    <div class="top-wrapper">
+    <div class="container">
       <% if flash %>
         <% flash.each do |message_type, message| %>
           <div class="alert alert-info"><%= message %></div>
@@ -55,11 +55,11 @@
   </body>
 
   <footer>
-    <nav>
-      <ul>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
+    <div class="container mt-4">
+      <ul class="list-inline float-right">
+        <li class="list-inline-item"><%= link_to "About", about_path %></li>
+        <li class="list-inline-item"><%= link_to "Contact", contact_path %></li>
       </ul>
-    </nav>
+    </div>
   </footer>
 </html>
