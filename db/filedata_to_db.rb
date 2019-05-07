@@ -51,8 +51,8 @@ def FDhandler(table_name)
                         cnt += 1
                     end
                 end
-                file.close()
             end
+            file.close()
 
         when "Quiztype" then
             $quiz_type.each do |typename|

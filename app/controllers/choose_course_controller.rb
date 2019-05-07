@@ -1,5 +1,7 @@
 require("./app/controllers/controllers_g_var.rb")
 class ChooseCourseController < ApplicationController
+  before_action :logged_in_user, only: [:index]
+
   def index
     @labels_ja = []
     Label.all.each do |ld|
@@ -9,9 +11,6 @@ class ChooseCourseController < ApplicationController
 
   def get_num
     render partial: 'select_num', locals: { label_name: $name_trans[params[:label_name]] }
-  end
-
-  def dynamic_course_list
   end
 
   private
@@ -26,4 +25,14 @@ class ChooseCourseController < ApplicationController
       end
       return q_types
     end
+
+    #ログイン済みユーザーかどうか確認
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in"
+        redirect_to login_url
+      end
+    end
+
 end
